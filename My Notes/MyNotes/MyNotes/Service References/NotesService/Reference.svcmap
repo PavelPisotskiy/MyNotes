@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ec086ab9-f1f3-4948-a04b-d051dc7ff85a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56318/Notes.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Notes.wsdl" MetadataType="Wsdl" ID="5387b195-38aa-407d-ae62-71f077b8d9fd" SourceId="1" SourceUrl="http://localhost:56318/Notes.svc?wsdl" />
+    <MetadataFile FileName="Notes.xsd" MetadataType="Schema" ID="92f75730-f4f7-4569-9374-cfe7f362ba6e" SourceId="1" SourceUrl="http://localhost:56318/Notes.svc?xsd=xsd2" />
+    <MetadataFile FileName="Notes.disco" MetadataType="Disco" ID="526f7a9f-28a8-466e-bd26-10572af5a061" SourceId="1" SourceUrl="http://localhost:56318/Notes.svc?disco" />
+    <MetadataFile FileName="Notes1.xsd" MetadataType="Schema" ID="fd655861-0376-4fd5-8be2-c3c6a1c6e772" SourceId="1" SourceUrl="http://localhost:56318/Notes.svc?xsd=xsd0" />
+    <MetadataFile FileName="Notes2.xsd" MetadataType="Schema" ID="1a61f984-b0a5-4b4b-88bb-cf369bc2724f" SourceId="1" SourceUrl="http://localhost:56318/Notes.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,83 @@
+﻿<Window x:Class="MyNotes.View.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:l="clr-namespace:MyNotes.Localization"
+        xmlns:local="clr-namespace:MyNotes.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:MyNotes.ViewModel"
+        Title="{x:Static l:LocalizeResource.TitleSettingsWindow}"
+        Width="300"
+        Height="300"
+        Icon="/MyNotes;component/Images/ApplicationIcon.ico"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+
+    <Window.Resources>
+        <viewModel:SettingsWindowViewModel x:Key="settingsWindowVM"></viewModel:SettingsWindowViewModel>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <StaticResource ResourceKey="settingsWindowVM"></StaticResource>
+    </Window.DataContext>
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Margin="10,5,0,5"
+                       VerticalAlignment="Center"
+                       FontWeight="Medium"
+                       Text="{x:Static l:LocalizeResource.LanguageLbl}" />
+            <ComboBox Grid.Column="1"
+                      Margin="10,5"
+                      VerticalAlignment="Center"
+                      ItemsSource="{Binding Path=ApplicationLanguages}"
+                      SelectedItem="{Binding SelectedLanguage,
+                                             UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <Image Width="16"
+                                   VerticalAlignment="Center"
+                                   Source="{Binding Path=ImageFlag}" />
+                            <TextBlock Margin="5,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Path=OriginalName}" />
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+        <Button Grid.ColumnSpan="2" Grid.Row="1" Content="Выйти" HorizontalAlignment="Right" Margin="5" Command="{Binding SignOutCommand}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">
+                <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Blue" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
